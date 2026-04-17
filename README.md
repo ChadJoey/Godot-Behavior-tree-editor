@@ -1,3 +1,63 @@
+
+# Godot Behavior Tree Editor
+
+A behavior tree GDExtension plugin for Godot 4.4, providing a visual editor and runtime nodes for building behavior trees in C++.
+
+## Requirements
+
+- [Godot 4.4](https://godotengine.org/download)
+- [Python](https://www.python.org/downloads/) (for SCons)
+- [SCons](https://scons.org/) build tool
+- A C++ compiler (MSVC on Windows, GCC/Clang on Linux/Mac)
+
+## Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/ChadJoey/Godot-Behavior-tree-editor.git
+cd Godot-Behavior-tree-editor
+```
+
+### 2. Initialize the submodule
+
+The project uses `godot-cpp` as a submodule. After cloning, run:
+
+```bash
+git submodule update --init --recursive
+```
+
+### 3. Install SCons
+
+If you don't have SCons installed:
+
+```bash
+pip install scons
+```
+
+### 4. Compile the extension
+
+From the root of the project, run:
+
+```bash
+scons target=template_debug platform=windows
+```
+
+Replace `platform=windows` with `platform=linux` or `platform=macos` depending on your OS.
+
+Once compiled, the `.dll` (or `.so` on Linux) will be placed in the `bin/` folder automatically.
+
+### 5. Open the demo project
+
+Open Godot 4.4 and import the project from the `demo/` folder. The extension should now be loaded and the behavior tree classes will be available.
+
+## Notes
+
+- This project **requires Godot 4.4**. Other versions are not guaranteed to work.
+- You must compile the extension before opening the project in Godot, otherwise you will see errors about missing classes such as `BT_ActionNode` and `BT_ConditionNode`.
+- The `godot-cpp` submodule is pinned to the `4.4` branch to match the engine version.
+
+
 # godot-cpp template
 This repository serves as a quickstart template for GDExtension development with Godot 4.0+.
 
