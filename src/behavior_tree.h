@@ -1,6 +1,6 @@
 #pragma once
 
-#include <godot_cpp/classes/graph_Node.hpp>
+#include <godot_cpp/classes/graph_node.hpp>
 #include <godot_cpp/classes/graph_edit.hpp>
 #include <godot_cpp/classes/node.hpp>
 #include <godot_cpp/classes/object.hpp>
