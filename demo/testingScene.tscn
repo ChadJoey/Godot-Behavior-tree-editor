@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://bhhs5u7akmyq1"]
+
+[ext_resource type="Script" uid="uid://cssmdcr4hhj8j" path="res://testing_scene.gd" id="1_761pb"]
+[ext_resource type="Texture2D" uid="uid://dnby2l5wmw07q" path="res://greggory.png" id="2_1dc3p"]
+[ext_resource type="Script" uid="uid://c8waop2paa41l" path="res://gerggory_controller.gd" id="2_4fqxj"]
+[ext_resource type="PackedScene" uid="uid://d2o4pq1lhmvhc" path="res://level.tscn" id="5_6a5vx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4fqxj"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_761pb")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(578, 325)
+scale = Vector2(-203.742, -11.363)
+
+[node name="Level" parent="." instance=ExtResource("5_6a5vx")]
+position = Vector2(1, 1)
+
+[node name="Gerggory_controller" type="CharacterBody2D" parent="."]
+position = Vector2(620, 234)
+script = ExtResource("2_4fqxj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gerggory_controller"]
+scale = Vector2(2.57, 2.57)
+shape = SubResource("CircleShape2D_4fqxj")
+
+[node name="Sprite2D" type="Sprite2D" parent="Gerggory_controller"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_1dc3p")

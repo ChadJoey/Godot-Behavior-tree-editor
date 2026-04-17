@@ -1,0 +1,116 @@
+[gd_resource type="BT_Tree_Resource" load_steps=18 format=3 uid="uid://80pqwjdwqr6t"]
+
+[ext_resource type="Script" uid="uid://bif0dmo0rj3ye" path="res://isvisible.gd" id="1_c354m"]
+[ext_resource type="Script" uid="uid://04aeedaudkyv" path="res://patrol_map.gd" id="2_1cwyd"]
+[ext_resource type="Script" uid="uid://bulo61e8084ce" path="res://should_i_still_chase.gd" id="3_en41s"]
+[ext_resource type="Script" uid="uid://b3uye7rktg352" path="res://have_i_reached_goal.gd" id="4_47n5s"]
+[ext_resource type="Script" uid="uid://dg16rkwrk0ch8" path="res://chase_player.gd" id="5_krla2"]
+
+[sub_resource type="BT_node_data" id="BT_node_data_6x8dq"]
+id = 0
+node_type = "BT_Graph_Tree"
+name = "tree"
+title = "root_tree"
+editor_position = Vector2(200, 200)
+children_ids = Array[int]([1])
+
+[sub_resource type="BT_node_data" id="BT_node_data_u681g"]
+id = 1
+node_type = "BT_Graph_SelectorNode"
+name = "BT_Graph_SelectorNode_1"
+title = "BT_Graph_SelectorNode_1"
+editor_position = Vector2(400, 200)
+max_children = -1
+children_ids = Array[int]([2, 8])
+
+[sub_resource type="BT_node_data" id="BT_node_data_xt11t"]
+id = 2
+node_type = "BT_Graph_SequenceNode"
+name = "BT_Graph_SequenceNode_2"
+title = "BT_Graph_SequenceNode_2"
+editor_position = Vector2(760, -40)
+max_children = -1
+children_ids = Array[int]([5, 6])
+
+[sub_resource type="BT_node_data" id="BT_node_data_qefcp"]
+id = 8
+node_type = "BT_Graph_SequenceNode"
+name = "BT_Graph_SequenceNode_8"
+title = "BT_Graph_SequenceNode_8"
+editor_position = Vector2(760, 460)
+max_children = -1
+children_ids = Array[int]([9, 10])
+
+[sub_resource type="BT_node_data" id="BT_node_data_4vu1v"]
+id = 5
+node_type = "BT_Graph_ConditionNode"
+name = "BT_Graph_ConditionNode_5"
+title = "BT_Graph_ConditionNode_5"
+editor_position = Vector2(1100, -140)
+script = ExtResource("1_c354m")
+script = ExtResource("1_c354m")
+
+[sub_resource type="BT_node_data" id="BT_node_data_yqke5"]
+id = 6
+node_type = "BT_Graph_SequenceNode"
+name = "BT_Graph_SequenceNode_6"
+title = "BT_Graph_SequenceNode_6"
+editor_position = Vector2(1080, 0)
+max_children = -1
+children_ids = Array[int]([3, 4, 7])
+
+[sub_resource type="BT_node_data" id="BT_node_data_10mj8"]
+id = 9
+node_type = "BT_Graph_InvertDecorator"
+name = "BT_Graph_InvertDecorator_9"
+title = "BT_Graph_InvertDecorator_9"
+editor_position = Vector2(1140, 460)
+children_ids = Array[int]([11])
+
+[sub_resource type="BT_node_data" id="BT_node_data_qfxov"]
+id = 10
+node_type = "BT_Graph_ActionNode"
+name = "BT_Graph_ActionNode_10"
+title = "BT_Graph_ActionNode_10"
+editor_position = Vector2(1140, 620)
+script = ExtResource("2_1cwyd")
+script = ExtResource("2_1cwyd")
+
+[sub_resource type="BT_node_data" id="BT_node_data_vlfhf"]
+id = 3
+node_type = "BT_Graph_ConditionNode"
+name = "BT_Graph_ConditionNode_3"
+title = "BT_Graph_ConditionNode_3"
+editor_position = Vector2(1480, -60)
+script = ExtResource("3_en41s")
+script = ExtResource("3_en41s")
+
+[sub_resource type="BT_node_data" id="BT_node_data_503x4"]
+id = 4
+node_type = "BT_Graph_ConditionNode"
+name = "BT_Graph_ConditionNode_4"
+title = "BT_Graph_ConditionNode_4"
+editor_position = Vector2(1480, 40)
+script = ExtResource("4_47n5s")
+script = ExtResource("4_47n5s")
+
+[sub_resource type="BT_node_data" id="BT_node_data_naakw"]
+id = 7
+node_type = "BT_Graph_ActionNode"
+name = "BT_Graph_ActionNode_7"
+title = "BT_Graph_ActionNode_7"
+editor_position = Vector2(1480, 140)
+script = ExtResource("5_krla2")
+script = ExtResource("5_krla2")
+
+[sub_resource type="BT_node_data" id="BT_node_data_qg8f0"]
+id = 11
+node_type = "BT_Graph_ConditionNode"
+name = "BT_Graph_ConditionNode_11"
+title = "BT_Graph_ConditionNode_11"
+editor_position = Vector2(1520, 460)
+script = ExtResource("1_c354m")
+script = ExtResource("1_c354m")
+
+[resource]
+all_nodes = Array[BT_node_data]([SubResource("BT_node_data_6x8dq"), SubResource("BT_node_data_u681g"), SubResource("BT_node_data_xt11t"), SubResource("BT_node_data_qefcp"), SubResource("BT_node_data_4vu1v"), SubResource("BT_node_data_yqke5"), SubResource("BT_node_data_10mj8"), SubResource("BT_node_data_qfxov"), SubResource("BT_node_data_vlfhf"), SubResource("BT_node_data_503x4"), SubResource("BT_node_data_naakw"), SubResource("BT_node_data_qg8f0")])

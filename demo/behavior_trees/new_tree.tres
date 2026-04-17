@@ -1,0 +1,28 @@
+[gd_resource type="BT_Tree_Resource" load_steps=4 format=3 uid="uid://bplpfh8q0ovws"]
+
+[sub_resource type="BT_node_data" id="BT_node_data_33f2l"]
+id = 0
+node_type = "BT_Graph_Tree"
+name = "tree"
+title = "root_tree"
+editor_position = Vector2(200, 200)
+children_ids = Array[int]([1])
+
+[sub_resource type="BT_node_data" id="BT_node_data_uyprx"]
+id = 1
+node_type = "BT_Graph_SequenceNode"
+name = "BT_Graph_SequenceNode_1"
+title = "BT_Graph_SequenceNode_1"
+editor_position = Vector2(520, 120)
+max_children = -1
+children_ids = Array[int]([2])
+
+[sub_resource type="BT_node_data" id="BT_node_data_l2gif"]
+id = 2
+node_type = "BT_Graph_InvertDecorator"
+name = "BT_Graph_InvertDecorator_2"
+title = "BT_Graph_InvertDecorator_2"
+editor_position = Vector2(840, 120)
+
+[resource]
+all_nodes = Array[BT_node_data]([SubResource("BT_node_data_33f2l"), SubResource("BT_node_data_uyprx"), SubResource("BT_node_data_l2gif")])

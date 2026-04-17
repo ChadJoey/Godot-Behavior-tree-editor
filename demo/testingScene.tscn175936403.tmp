@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhhs5u7akmyq1"]
+
+[ext_resource type="Script" uid="uid://tw34wfkahw0n" path="res://bt_node.gd" id="1_thb6t"]
+[ext_resource type="Script" uid="uid://cfp1pd5kx05q4" path="res://bt_node_2.gd" id="2_1dc3p"]
+[ext_resource type="Script" uid="uid://itus6cytysas" path="res://end_task.gd" id="3_4fqxj"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="BT_SequenceNode" type="BT_SequenceNode" parent="."]
+child_nodes = [NodePath("../StartTask"), NodePath("../RunTask"), NodePath("../EndTask")]
+tickrate = 20
+
+[node name="StartTask" type="BT_Node" parent="."]
+tickrate = 1
+script = ExtResource("1_thb6t")
+
+[node name="RunTask" type="BT_Node" parent="."]
+tickrate = 1
+script = ExtResource("2_1dc3p")
+
+[node name="EndTask" type="BT_Node" parent="."]
+tickrate = 1
+script = ExtResource("3_4fqxj")

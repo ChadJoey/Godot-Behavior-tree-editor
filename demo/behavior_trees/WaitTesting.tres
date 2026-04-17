@@ -1,0 +1,31 @@
+[gd_resource type="BT_Tree_Resource" load_steps=5 format=3 uid="uid://b2b1i5qx4l4nr"]
+
+[ext_resource type="Script" uid="uid://bif0dmo0rj3ye" path="res://isvisible.gd" id="1_4ljhe"]
+
+[sub_resource type="BT_node_data" id="BT_node_data_cao8j"]
+id = 0
+node_type = "BT_Graph_Tree"
+name = "tree"
+title = "root_tree"
+editor_position = Vector2(200, 200)
+children_ids = Array[int]([1])
+
+[sub_resource type="BT_node_data" id="BT_node_data_a0wfc"]
+id = 1
+node_type = "BT_Graph_WaitNode"
+name = "BT_Graph_WaitNode_1"
+title = "BT_Graph_WaitNode_1"
+editor_position = Vector2(400, 200)
+children_ids = Array[int]([2])
+
+[sub_resource type="BT_node_data" id="BT_node_data_6alr8"]
+id = 2
+node_type = "BT_Graph_ConditionNode"
+name = "BT_Graph_ConditionNode_2"
+title = "BT_Graph_ConditionNode_2"
+editor_position = Vector2(680, 200)
+script = ExtResource("1_4ljhe")
+script = ExtResource("1_4ljhe")
+
+[resource]
+all_nodes = Array[BT_node_data]([SubResource("BT_node_data_cao8j"), SubResource("BT_node_data_a0wfc"), SubResource("BT_node_data_6alr8")])

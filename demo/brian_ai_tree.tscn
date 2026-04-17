@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://b20gs7u67d71o"]
+
+[ext_resource type="Script" uid="uid://bif0dmo0rj3ye" path="res://isvisible.gd" id="1_ys7tp"]
+[ext_resource type="Script" uid="uid://dg16rkwrk0ch8" path="res://chase_player.gd" id="2_cuxmo"]
+[ext_resource type="Script" uid="uid://04aeedaudkyv" path="res://patrol_map.gd" id="3_mti53"]
+
+[node name="BT_Tree" type="BT_Tree"]
+
+[node name="selector" type="BT_SelectorNode" parent="."]
+child_nodes = [NodePath("chase"), NodePath("patrol")]
+
+[node name="chase" type="BT_SequenceNode" parent="selector"]
+child_nodes = [NodePath("Isvisible"), NodePath("chase_player")]
+
+[node name="Isvisible" type="BT_ConditionNode" parent="selector/chase"]
+script = ExtResource("1_ys7tp")
+
+[node name="chase_player" type="BT_ActionNode" parent="selector/chase"]
+script = ExtResource("2_cuxmo")
+
+[node name="patrol" type="BT_SequenceNode" parent="selector"]
+child_nodes = [NodePath("BT_InvertDecorator"), NodePath("BT_ActionNode")]
+
+[node name="BT_InvertDecorator" type="BT_InvertDecorator" parent="selector/patrol"]
+child_node = NodePath("Isvisible")
+
+[node name="Isvisible" type="BT_ConditionNode" parent="selector/patrol/BT_InvertDecorator"]
+script = ExtResource("1_ys7tp")
+
+[node name="BT_ActionNode" type="BT_ActionNode" parent="selector/patrol"]
+script = ExtResource("3_mti53")

@@ -1,0 +1,23 @@
+[gd_resource type="BT_Tree_Resource" load_steps=4 format=3 uid="uid://c0dlnh7d84k37"]
+
+[ext_resource type="Script" uid="uid://04aeedaudkyv" path="res://patrol_map.gd" id="1_uan31"]
+
+[sub_resource type="BT_node_data" id="BT_node_data_pfdri"]
+id = 0
+node_type = "BT_Graph_Tree"
+name = "tree"
+title = "root_tree"
+editor_position = Vector2(200, 200)
+children_ids = Array[int]([1])
+
+[sub_resource type="BT_node_data" id="BT_node_data_kvb5g"]
+id = 1
+node_type = "BT_Graph_ActionNode"
+name = "BT_Graph_ActionNode_1"
+title = "BT_Graph_ActionNode_1"
+editor_position = Vector2(440, 200)
+script = ExtResource("1_uan31")
+script = ExtResource("1_uan31")
+
+[resource]
+all_nodes = Array[BT_node_data]([SubResource("BT_node_data_pfdri"), SubResource("BT_node_data_kvb5g")])

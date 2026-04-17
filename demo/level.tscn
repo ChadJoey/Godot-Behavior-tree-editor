@@ -1,0 +1,142 @@
+[gd_scene load_steps=13 format=3 uid="uid://d2o4pq1lhmvhc"]
+
+[ext_resource type="Script" uid="uid://dmi25vq8qgj8m" path="res://level.gd" id="1_u52ul"]
+[ext_resource type="Script" uid="uid://trsdgttr8iyb" path="res://path_follow_2d.gd" id="4_0b4ue"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u52ul"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_vonw3"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_oi3di"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0b4ue"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_f2txt"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_1ainy"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_n6hdu"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_km5ld"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_5xgho"]
+vertices = PackedVector2Array(1145.93, 9.00781, 1142.06, 639.008, 1049.1, 406.883, 1031, 225, 1031, 159.891, 1013.7, 366.656, 504.648, 560.039, 864.328, 506.078, 894.844, 543.383, 6.03906, 640.977, 550.578, 321.773, 660.172, 166.898, 737.961, 163.109, 739.039, 451, 500.398, 492.031, 546.438, 250, 348.172, 170.102, 278.211, 250, 269.078, 139.5, 346.828, 90.0313, 209.211, 558.961, 207.789, 490.961, 8.95313, 10.9766, 204, 433.031, 805, 451, 805, 225, 275.742, 327.789, 272.711, 440.039, 204, 149.406, 658.828, 88.9688)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(3, 2, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(10, 11, 12, 13, 6, 14), PackedInt32Array(11, 10, 15), PackedInt32Array(16, 11, 15, 17), PackedInt32Array(16, 17, 18, 19), PackedInt32Array(8, 2, 1), PackedInt32Array(8, 1, 9), PackedInt32Array(20, 6, 9), PackedInt32Array(21, 20, 9, 22, 23), PackedInt32Array(24, 25, 3, 5, 7), PackedInt32Array(24, 7, 6, 13), PackedInt32Array(26, 10, 14, 27), PackedInt32Array(27, 14, 21, 23), PackedInt32Array(28, 23, 22), PackedInt32Array(12, 11, 29, 0), PackedInt32Array(0, 4, 12), PackedInt32Array(22, 0, 29, 19), PackedInt32Array(28, 22, 19, 18)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(357, 100, 358, 160, 650, 157, 649, 99), PackedVector2Array(-1, 1, 1156, -1, 1152, 649, -4, 651), PackedVector2Array(748, 173, 749, 441, 795, 441, 795, 215, 1021, 215, 1021, 170), PackedVector2Array(1013, 381, 878, 507, 896, 529, 1035, 406), PackedVector2Array(218, 501, 219, 549, 494, 550, 491, 502), PackedVector2Array(214, 158, 214, 424, 263, 429, 266, 318, 540, 312, 537, 260, 269, 260, 260, 151)])
+
+[sub_resource type="Curve2D" id="Curve2D_vonw3"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 73.25, 61, 0, 0, 0, 0, 1057.25, 80, 0, 0, 0, 0, 1101.25, 567, 0, 0, 0, 0, 72.25, 599, 0, 0, 0, 0, 73.25, 63)
+}
+point_count = 5
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_u52ul")
+
+[node name="world_borders" type="Node2D" parent="."]
+
+[node name="Map" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Map"]
+position = Vector2(239, 292)
+scale = Vector2(2.27, 13.53)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/StaticBody2D"]
+shape = SubResource("RectangleShape2D_u52ul")
+debug_color = Color(3.46541e-06, 0.600801, 0.695363, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="Map/StaticBody2D"]
+scale = Vector2(20.2643, 20.2513)
+texture = SubResource("CanvasTexture_vonw3")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Map"]
+position = Vector2(770, 306)
+scale = Vector2(2.27, 13.53)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/StaticBody2D4"]
+shape = SubResource("RectangleShape2D_u52ul")
+
+[node name="Sprite2D" type="Sprite2D" parent="Map/StaticBody2D4"]
+position = Vector2(0.220264, 0.0739093)
+scale = Vector2(20.7048, 20.3991)
+texture = SubResource("CanvasTexture_oi3di")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Map"]
+position = Vector2(398, 290)
+rotation = -1.5708
+scale = Vector2(2.27, 13.53)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/StaticBody2D2"]
+shape = SubResource("RectangleShape2D_u52ul")
+
+[node name="Sprite2D" type="Sprite2D" parent="Map/StaticBody2D2"]
+position = Vector2(0.322487, 0.0541029)
+scale = Vector2(19.7039, 20.1534)
+texture = SubResource("CanvasTexture_0b4ue")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Map"]
+position = Vector2(885, 193)
+rotation = -1.5708
+scale = Vector2(2.27, 13.53)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/StaticBody2D5"]
+shape = SubResource("RectangleShape2D_u52ul")
+
+[node name="Sprite2D" type="Sprite2D" parent="Map/StaticBody2D5"]
+position = Vector2(1.19375e-05, -0.162316)
+scale = Vector2(21.6389, 20.1534)
+texture = SubResource("CanvasTexture_f2txt")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="Map"]
+position = Vector2(503, 129)
+rotation = -1.5708
+scale = Vector2(2.27, 13.53)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/StaticBody2D6"]
+shape = SubResource("RectangleShape2D_u52ul")
+
+[node name="Sprite2D" type="Sprite2D" parent="Map/StaticBody2D6"]
+position = Vector2(0.32249, -0.108212)
+scale = Vector2(20.9939, 20.0452)
+texture = SubResource("CanvasTexture_1ainy")
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="Map"]
+position = Vector2(955, 454)
+rotation = -2.29511
+scale = Vector2(1.61, 9.185)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/StaticBody2D7"]
+shape = SubResource("RectangleShape2D_u52ul")
+
+[node name="Sprite2D" type="Sprite2D" parent="Map/StaticBody2D7"]
+position = Vector2(-0.538903, 0.11939)
+scale = Vector2(20.6178, 20.4332)
+texture = SubResource("CanvasTexture_n6hdu")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Map"]
+position = Vector2(355, 524)
+rotation = -1.5708
+scale = Vector2(2.27, 13.53)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/StaticBody2D3"]
+shape = SubResource("RectangleShape2D_u52ul")
+
+[node name="Sprite2D" type="Sprite2D" parent="Map/StaticBody2D3"]
+position = Vector2(9.10759e-05, 0.0541096)
+scale = Vector2(19.0596, 19.937)
+texture = SubResource("CanvasTexture_km5ld")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_5xgho")
+
+[node name="brian_patroll_path" type="Path2D" parent="."]
+position = Vector2(8.75, 0)
+curve = SubResource("Curve2D_vonw3")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="brian_patroll_path"]
+position = Vector2(967.336, 571.165)
+rotation = 0.0649182
+progress = 1607.15
+rotates = false
+script = ExtResource("4_0b4ue")

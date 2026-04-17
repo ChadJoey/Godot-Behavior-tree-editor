@@ -1,0 +1,36 @@
+[gd_resource type="BT_Tree_Resource" load_steps=5 format=3 uid="uid://0swvm3gbah7g"]
+
+[sub_resource type="BT_node_data" id="BT_node_data_s2864"]
+id = 0
+node_type = "BT_Graph_Tree"
+name = "tree"
+title = "root_tree"
+editor_position = Vector2(200, 200)
+children_ids = Array[int]([1])
+
+[sub_resource type="BT_node_data" id="BT_node_data_fc71w"]
+id = 1
+node_type = "BT_Graph_SequenceNode"
+name = "BT_Graph_SequenceNode_1"
+title = "BT_Graph_SequenceNode_1"
+editor_position = Vector2(360, 180)
+max_children = -1
+children_ids = Array[int]([2, 3])
+
+[sub_resource type="BT_node_data" id="BT_node_data_q1pw4"]
+id = 2
+node_type = "BT_Graph_ActionNode"
+name = "BT_Graph_ActionNode_2"
+title = "BT_Graph_ActionNode_2"
+editor_position = Vector2(680, 140)
+
+[sub_resource type="BT_node_data" id="BT_node_data_gpj46"]
+id = 3
+node_type = "BT_Graph_ConditionNode"
+name = "BT_Graph_ConditionNode_3"
+title = "BT_Graph_ConditionNode_3"
+editor_position = Vector2(680, 260)
+
+[resource]
+node_id_count = 4
+all_nodes = Array[BT_node_data]([SubResource("BT_node_data_s2864"), SubResource("BT_node_data_fc71w"), SubResource("BT_node_data_q1pw4"), SubResource("BT_node_data_gpj46")])

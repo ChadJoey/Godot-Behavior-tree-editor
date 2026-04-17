@@ -1,0 +1,42 @@
+[gd_resource type="BT_Tree_Resource" load_steps=7 format=3 uid="uid://bmlbyeuv3x4hx"]
+
+[ext_resource type="Script" uid="uid://bif0dmo0rj3ye" path="res://isvisible.gd" id="1_sbs1v"]
+[ext_resource type="Script" uid="uid://dg16rkwrk0ch8" path="res://chase_player.gd" id="2_8o6vk"]
+
+[sub_resource type="BT_node_data" id="BT_node_data_5xgt3"]
+id = 0
+node_type = "BT_Graph_Tree"
+name = "tree"
+title = "root_tree"
+editor_position = Vector2(200, 200)
+children_ids = Array[int]([1])
+
+[sub_resource type="BT_node_data" id="BT_node_data_jthtn"]
+id = 1
+node_type = "BT_Graph_SelectorNode"
+name = "BT_Graph_SelectorNode_1"
+title = "BT_Graph_SelectorNode_1"
+editor_position = Vector2(360, 140)
+max_children = -1
+children_ids = Array[int]([2, 3])
+
+[sub_resource type="BT_node_data" id="BT_node_data_ge2ue"]
+id = 2
+node_type = "BT_Graph_ConditionNode"
+name = "BT_Graph_ConditionNode_2"
+title = "BT_Graph_ConditionNode_2"
+editor_position = Vector2(660, 140)
+script = ExtResource("1_sbs1v")
+script = ExtResource("1_sbs1v")
+
+[sub_resource type="BT_node_data" id="BT_node_data_186yw"]
+id = 3
+node_type = "BT_Graph_ActionNode"
+name = "BT_Graph_ActionNode_3"
+title = "BT_Graph_ActionNode_3"
+editor_position = Vector2(660, 260)
+script = ExtResource("2_8o6vk")
+script = ExtResource("2_8o6vk")
+
+[resource]
+all_nodes = Array[BT_node_data]([SubResource("BT_node_data_5xgt3"), SubResource("BT_node_data_jthtn"), SubResource("BT_node_data_ge2ue"), SubResource("BT_node_data_186yw")])

@@ -1,0 +1,47 @@
+[gd_resource type="BT_Tree_Resource" load_steps=7 format=3 uid="uid://hfvwd5vs8ali"]
+
+[ext_resource type="Script" uid="uid://dpbx5vjwavbfe" path="res://brian_ai.gd" id="1_a7mgg"]
+
+[sub_resource type="BT_node_data" id="BT_node_data_ths5q"]
+id = 0
+node_type = "BT_Graph_Tree"
+name = "tree"
+title = "root_tree"
+editor_position = Vector2(200, 200)
+children_ids = Array[int]([1])
+
+[sub_resource type="BT_node_data" id="BT_node_data_bq1mh"]
+id = 1
+node_type = "BT_Graph_SelectorNode"
+name = "BT_Graph_SelectorNode_1"
+title = "BT_Graph_SelectorNode_1"
+editor_position = Vector2(440, 140)
+max_children = -1
+children_ids = Array[int]([2, 3, 4])
+
+[sub_resource type="BT_node_data" id="BT_node_data_g41q2"]
+id = 2
+node_type = "BT_Graph_ConditionNode"
+name = "BT_Graph_ConditionNode_2"
+title = "BT_Graph_ConditionNode_2"
+editor_position = Vector2(820, 60)
+script = ExtResource("1_a7mgg")
+script = ExtResource("1_a7mgg")
+
+[sub_resource type="BT_node_data" id="BT_node_data_a8011"]
+id = 3
+node_type = "BT_Graph_InvertDecorator"
+name = "BT_Graph_InvertDecorator_3"
+title = "BT_Graph_InvertDecorator_3"
+editor_position = Vector2(840, 200)
+
+[sub_resource type="BT_node_data" id="BT_node_data_wdw7m"]
+id = 4
+node_type = "BT_Graph_SelectorNode"
+name = "BT_Graph_SelectorNode_4"
+title = "BT_Graph_SelectorNode_4"
+editor_position = Vector2(860, 340)
+max_children = -1
+
+[resource]
+all_nodes = Array[BT_node_data]([SubResource("BT_node_data_ths5q"), SubResource("BT_node_data_bq1mh"), SubResource("BT_node_data_g41q2"), SubResource("BT_node_data_a8011"), SubResource("BT_node_data_wdw7m")])

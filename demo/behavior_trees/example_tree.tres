@@ -1,0 +1,59 @@
+[gd_resource type="BT_Tree_Resource" load_steps=9 format=3 uid="uid://dkxmcbaduixf7"]
+
+[ext_resource type="Script" uid="uid://04aeedaudkyv" path="res://patrol_map.gd" id="1_xxwr7"]
+[ext_resource type="Script" uid="uid://bif0dmo0rj3ye" path="res://isvisible.gd" id="2_sx5jj"]
+
+[sub_resource type="BT_node_data" id="BT_node_data_td71l"]
+id = 0
+node_type = "BT_Graph_Tree"
+name = "tree"
+title = "root_tree"
+editor_position = Vector2(200, 200)
+children_ids = Array[int]([1])
+
+[sub_resource type="BT_node_data" id="BT_node_data_jokwc"]
+id = 1
+node_type = "BT_Graph_SelectorNode"
+name = "BT_Graph_SelectorNode_1"
+title = "BT_Graph_SelectorNode_1"
+editor_position = Vector2(400, 120)
+max_children = -1
+children_ids = Array[int]([2])
+
+[sub_resource type="BT_node_data" id="BT_node_data_xp1fa"]
+id = 2
+node_type = "BT_Graph_SelectorNode"
+name = "BT_Graph_SelectorNode_2"
+title = "BT_Graph_SelectorNode_2"
+editor_position = Vector2(680, 80)
+max_children = -1
+children_ids = Array[int]([3, 5])
+
+[sub_resource type="BT_node_data" id="BT_node_data_nahws"]
+id = 3
+node_type = "BT_Graph_InvertDecorator"
+name = "BT_Graph_InvertDecorator_3"
+title = "BT_Graph_InvertDecorator_3"
+editor_position = Vector2(1060, 60)
+children_ids = Array[int]([4])
+
+[sub_resource type="BT_node_data" id="BT_node_data_p4fbw"]
+id = 5
+node_type = "BT_Graph_ActionNode"
+name = "BT_Graph_ActionNode_5"
+title = "BT_Graph_ActionNode_5"
+editor_position = Vector2(1100, 200)
+script = ExtResource("1_xxwr7")
+script = ExtResource("1_xxwr7")
+
+[sub_resource type="BT_node_data" id="BT_node_data_2sukv"]
+id = 4
+node_type = "BT_Graph_ConditionNode"
+name = "BT_Graph_ConditionNode_4"
+title = "BT_Graph_ConditionNode_4"
+editor_position = Vector2(1460, 80)
+script = ExtResource("2_sx5jj")
+script = ExtResource("2_sx5jj")
+
+[resource]
+all_nodes = Array[BT_node_data]([SubResource("BT_node_data_td71l"), SubResource("BT_node_data_jokwc"), SubResource("BT_node_data_xp1fa"), SubResource("BT_node_data_nahws"), SubResource("BT_node_data_p4fbw"), SubResource("BT_node_data_2sukv")])

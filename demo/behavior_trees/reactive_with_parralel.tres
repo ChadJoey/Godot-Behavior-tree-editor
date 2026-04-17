@@ -1,0 +1,80 @@
+[gd_resource type="BT_Tree_Resource" load_steps=13 format=3 uid="uid://ey2cf6lo1k1r"]
+
+[ext_resource type="Script" uid="uid://04aeedaudkyv" path="res://patrol_map.gd" id="1_44okf"]
+[ext_resource type="Script" uid="uid://bif0dmo0rj3ye" path="res://isvisible.gd" id="2_4gr1y"]
+[ext_resource type="Script" uid="uid://dg16rkwrk0ch8" path="res://chase_player.gd" id="3_rhl0x"]
+[ext_resource type="Script" uid="uid://bp0873r7sokh1" path="res://look at player.gd" id="4_jlpmy"]
+
+[sub_resource type="BT_node_data" id="BT_node_data_c6fpn"]
+id = 0
+node_type = "BT_Graph_Tree"
+name = "tree"
+title = "root_tree"
+editor_position = Vector2(200, 200)
+children_ids = Array[int]([1])
+
+[sub_resource type="BT_node_data" id="BT_node_data_rpywt"]
+id = 1
+node_type = "BT_Graph_SelectorNode"
+name = "BT_Graph_SelectorNode_1"
+title = "BT_Graph_SelectorNode_1"
+editor_position = Vector2(360, 200)
+max_children = -1
+children_ids = Array[int]([2, 7])
+
+[sub_resource type="BT_node_data" id="BT_node_data_kocn0"]
+id = 2
+node_type = "BT_Graph_ReactiveSequenceNode"
+name = "BT_Graph_ReactiveSequenceNode_2"
+title = "BT_Graph_ReactiveSequenceNode_2"
+editor_position = Vector2(680, 200)
+max_children = -1
+children_ids = Array[int]([3, 4])
+
+[sub_resource type="BT_node_data" id="BT_node_data_365v5"]
+id = 7
+node_type = "BT_Graph_ActionNode"
+name = "BT_Graph_ActionNode_7"
+title = "BT_Graph_ActionNode_7"
+editor_position = Vector2(680, 420)
+script = ExtResource("1_44okf")
+script = ExtResource("1_44okf")
+
+[sub_resource type="BT_node_data" id="BT_node_data_fom6s"]
+id = 3
+node_type = "BT_Graph_ConditionNode"
+name = "BT_Graph_ConditionNode_3"
+title = "BT_Graph_ConditionNode_3"
+editor_position = Vector2(1120, 200)
+script = ExtResource("2_4gr1y")
+script = ExtResource("2_4gr1y")
+
+[sub_resource type="BT_node_data" id="BT_node_data_l88hs"]
+id = 4
+node_type = "BT_Graph_ParralelNode"
+name = "BT_Graph_ParralelNode_4"
+title = "BT_Graph_ParralelNode_4"
+editor_position = Vector2(1120, 320)
+max_children = -1
+children_ids = Array[int]([5, 6])
+
+[sub_resource type="BT_node_data" id="BT_node_data_2wq7y"]
+id = 5
+node_type = "BT_Graph_ActionNode"
+name = "BT_Graph_ActionNode_5"
+title = "BT_Graph_ActionNode_5"
+editor_position = Vector2(1400, 300)
+script = ExtResource("3_rhl0x")
+script = ExtResource("3_rhl0x")
+
+[sub_resource type="BT_node_data" id="BT_node_data_yo3el"]
+id = 6
+node_type = "BT_Graph_ActionNode"
+name = "BT_Graph_ActionNode_6"
+title = "BT_Graph_ActionNode_6"
+editor_position = Vector2(1400, 420)
+script = ExtResource("4_jlpmy")
+script = ExtResource("4_jlpmy")
+
+[resource]
+all_nodes = Array[BT_node_data]([SubResource("BT_node_data_c6fpn"), SubResource("BT_node_data_rpywt"), SubResource("BT_node_data_kocn0"), SubResource("BT_node_data_365v5"), SubResource("BT_node_data_fom6s"), SubResource("BT_node_data_l88hs"), SubResource("BT_node_data_2wq7y"), SubResource("BT_node_data_yo3el")])
